@@ -13,8 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    <p> api_token </p>
+                    {{ Auth::user()->api_token }}
                 </div>
             </div>
         </div>
