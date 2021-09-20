@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Validator;
 class ProductController extends Controller
 {
 
+
+
     public function show(Product $product){
         return response()->json(new ProductResource($product));
     }
@@ -57,4 +59,5 @@ class ProductController extends Controller
             new ProductResource($product)
         );
     }
+    
 }

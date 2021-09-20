@@ -13,7 +13,7 @@ class CategoryController extends Controller
 {
     public function __construct()
     {
-        return $this->middleware('auth:api')->only(['store','create']);
+        return $this->middleware('auth:api');
     }
     public function index(){
         $categories = Category::all();

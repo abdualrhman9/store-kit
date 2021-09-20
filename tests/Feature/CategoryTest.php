@@ -58,7 +58,7 @@ class CategoryTest extends TestCase
     public function list_of_categories_can_be_fetched(){
         $this->withoutExceptionHandling();
         $categories = Category::factory()->create();
-        $response = $this->get('/api/categories');
+        $response = $this->get('/api/categories?api_token='.$this->user->api_token);
         $response->assertJson([
             [
                 [
@@ -71,6 +71,7 @@ class CategoryTest extends TestCase
                 ]
             ]
         ]);
+
     }
 
 
