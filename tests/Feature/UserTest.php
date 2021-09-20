@@ -30,8 +30,8 @@ class UserTest extends TestCase
         return [
             'name'=>'John Doe',
             'email'=>'JohnDoe@test.com',
-            'password'=>'password',
-            'password_confirmation'=>'password',
+            'password'=>'23456789',
+            'password_confirmation'=>'23456789',
         ];
     }
 }
