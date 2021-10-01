@@ -5,13 +5,23 @@ namespace App\Http\Controllers;
 use App\Http\Resources\ProductResource;
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
+    
+    public function __construct()
+    {
+        return $this->middleware('auth:api');
+    }
 
-
+    public function index(){
+        Product::factory()->count(2)->create();
+        $products = Product::all();
+        return response()->json(ProductResource::collection($products));
+    }
 
     public function show(Product $product){
         return response()->json(new ProductResource($product));
